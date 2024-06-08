@@ -8,9 +8,9 @@ const START_PARKING_BUTTON_SELECTOR = 'button:has-text("alusta parkimine")';
 
 class EuroParkAutomation {
     constructor(username, password, vehicleReg) {
-        this.username = username;
-        this.password = password;
-        this.vehicleReg = vehicleReg;
+        this.username = process.env.EMAIL;
+        this.password = process.env.PASSWORD;
+        this.vehicleReg = process.env.VEHICLE_REG;
         this.browser = null;
         this.page = null;
     }
