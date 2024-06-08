@@ -2,9 +2,9 @@ name: Run daily script
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'  
-  workflow_dispatch: 
-  
+    - cron: '0 8 * * 1-5'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,6 +18,11 @@ jobs:
       with:
         node-version: '14'
 
+    - name: List files for debugging
+      run: |
+        pwd
+        ls -la
+
     - name: Install dependencies
       run: npm install
 
@@ -27,5 +32,7 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
       run: |
+        echo "Running script..."
+        pwd
         ls -la
         node parkingscript.js
