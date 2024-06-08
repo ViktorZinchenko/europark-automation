@@ -26,4 +26,4 @@ jobs:
         EMAIL: ${{ secrets.EMAIL }}
         PASSWORD: ${{ secrets.PASSWORD }}
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
-      run: node /path/to/your/script.js
+      run: parkingscript.js
