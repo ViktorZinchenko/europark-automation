@@ -27,4 +27,5 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
       run: |
+        ls -la
         node parkingscript.js
