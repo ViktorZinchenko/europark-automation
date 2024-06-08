@@ -7,7 +7,7 @@ const LOGIN_BUTTON_SELECTOR = 'button:has-text("sisene")';
 const START_PARKING_BUTTON_SELECTOR = 'button:has-text("alusta parkimine")';
 
 class EuroParkAutomation {
-    constructor(username, password, vehicleReg) {
+    constructor() {
         this.username = process.env.EMAIL;
         this.password = process.env.PASSWORD;
         this.vehicleReg = process.env.VEHICLE_REG;
@@ -71,4 +71,4 @@ class EuroParkAutomation {
     }
 }
 
-new EuroParkAutomation('viktor.z@parim.co.uk', 'sol27gb', '058MXS').run();
+new EuroParkAutomation().run();
