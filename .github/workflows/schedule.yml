@@ -2,8 +2,9 @@ name: Run daily script
 
 on:
   schedule:
-    - cron: '0 8 * * 1-5'
-
+    - cron: '0 8 * * 1-5'  
+  workflow_dispatch: 
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,4 +26,4 @@ jobs:
         EMAIL: ${{ secrets.EMAIL }}
         PASSWORD: ${{ secrets.PASSWORD }}
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
-      run: node parkingscript.js
+      run: node /path/to/your/script.js
