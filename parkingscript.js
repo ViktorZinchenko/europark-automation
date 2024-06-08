@@ -48,7 +48,7 @@ class EuroParkAutomation {
             await this.page.waitForSelector(VEHICLE_REG_SELECTOR);
             await this.page.fill(VEHICLE_REG_SELECTOR, this.vehicleReg);
             await this.page.click(START_PARKING_BUTTON_SELECTOR);
-            await this.sendNotification("Parking started successfully.");
+            await this.sendNotification("Parking started successfully. :)");
         } catch (error) {
             console.error("Error during starting parking: ", error);
             await this.sendNotification("Error during starting parking: " + error.message);
