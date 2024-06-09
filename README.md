@@ -86,42 +86,6 @@ This project includes a GitHub Actions workflow to run the automation script dai
 
 2. The workflow is defined in `.github/workflows/schedule.yml`:
 
-    ```yaml
-    name: Run daily script
-
-    on:
-      schedule:
-        - cron: '0 8 * * 1-5'
-      workflow_dispatch:
-
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-
-        steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-
-        - name: Build Docker image
-          run: docker build -t europark-automation .
-
-        - name: Run script
-          env:
-            EMAIL: ${{ secrets.EMAIL }}
-            PASSWORD: ${{ secrets.PASSWORD }}
-            VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
-            TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-            TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          run: |
-            docker run \
-              -e EMAIL=$EMAIL \
-              -e PASSWORD=$PASSWORD \
-              -e VEHICLE_REG=$VEHICLE_REG \
-              -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
-              -e TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID \
-              europark-automation
-    ```
-
 ## Environment Variables
 
 The following environment variables are used by the script:
