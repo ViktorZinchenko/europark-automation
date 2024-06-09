@@ -23,4 +23,11 @@ jobs:
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: docker run -e EMAIL=${{ secrets.EMAIL }} -e PASSWORD=${{ secrets.PASSWORD }} -e VEHICLE_REG=${{ secrets.VEHICLE_REG }} -e TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} -e TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} europark-automation
+      run: |
+        docker run \
+          -e EMAIL=$EMAIL \
+          -e PASSWORD=$PASSWORD \
+          -e VEHICLE_REG=$VEHICLE_REG \
+          -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
+          -e TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID \
+          europark-automation
