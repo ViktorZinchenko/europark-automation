@@ -7,10 +7,11 @@
     "start": "tsc && node dist/main.js"
   },
   "dependencies": {
-    "playwright": "^1.10.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "playwright": "^1.10.0"
   },
   "devDependencies": {
+    "@types/node": "^20.14.2",
     "typescript": "^4.1.3"
   },
   "author": "",
