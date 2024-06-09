@@ -6,6 +6,7 @@ const PASSWORD_SELECTOR = 'input[name="password"]';
 const VEHICLE_REG_SELECTOR = 'input[id="vehicleReg"]';
 const LOGIN_BUTTON_SELECTOR = 'button:has-text("sisene")';
 const START_PARKING_BUTTON_SELECTOR = 'button:has-text("alusta parkimine")';
+const SUCCESS_MESSAGE_SELECTOR = 'button:has-text("lõpeta parkimine")';
 
 class EuroParkAutomation {
     constructor() {
@@ -48,6 +49,7 @@ class EuroParkAutomation {
             await this.page.waitForSelector(VEHICLE_REG_SELECTOR);
             await this.page.fill(VEHICLE_REG_SELECTOR, this.vehicleReg);
             await this.page.click(START_PARKING_BUTTON_SELECTOR);
+            await this.page.waitForSelector(SUCCESS_MESSAGE_SELECTOR);
             await this.sendNotification("Parking started successfully. 😊");
         } catch (error) {
             console.error("Error during starting parking: ", error);
