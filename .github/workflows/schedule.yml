@@ -24,8 +24,8 @@ jobs:
     - name: Install Playwright browsers
       run: npx playwright install
 
-    - name: Install axios
-      run: npm install axios
+    - name: Build the project
+      run: npx tsc
 
     - name: Run script
       env:
@@ -34,4 +34,4 @@ jobs:
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: node parkingscript.js
+      run: node dist/main.js

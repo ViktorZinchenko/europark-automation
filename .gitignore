@@ -1,0 +1,37 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# TypeScript
+*.tsbuildinfo
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+
+# Playwright cache
+playwright/.cache
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# IDEs and editors
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Lock file
+package-lock.json
