@@ -78,7 +78,7 @@ This project includes a GitHub Actions workflow to run the automation script dai
     - `TELEGRAM_BOT_TOKEN`
     - `TELEGRAM_CHAT_ID`
 
-2. The workflow is defined in `.github/workflows/main.yml`:
+2. The workflow is defined in `.github/workflows/schedule.yml`:
 
     ```yaml
     name: Run daily script
