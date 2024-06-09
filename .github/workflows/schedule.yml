@@ -13,19 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Install Playwright browsers
-      run: npx playwright install
-
-    - name: Build the project
-      run: npx tsc
+    - name: Build Docker image
+      run: docker build -t europark-automation .
 
     - name: Run script
       env:
@@ -34,4 +23,4 @@ jobs:
         VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: node dist/main.js
+      run: docker run -e EMAIL=${{ secrets.EMAIL }} -e PASSWORD=${{ secrets.PASSWORD }} -e VEHICLE_REG=${{ secrets.VEHICLE_REG }} -e TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} -e TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} europark-automation

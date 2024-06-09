@@ -4,9 +4,6 @@ import { PlaywrightHttpClient } from './clients/playwrightHttpClient';
 import { LoginManager } from './managers/loginManager';
 import { ParkingManager } from './managers/parkingManager';
 import { NotificationManager } from './managers/notificationManager';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 async function main() {
     const browserManager = new PlaywrightBrowserManager();
