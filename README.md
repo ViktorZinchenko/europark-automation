@@ -78,26 +78,10 @@ This project includes a GitHub Actions workflow to run the automation script dai
 
 1. Add your secrets to the GitHub repository:
 
-    - `EMAIL`
-    - `PASSWORD`
-    - `VEHICLE_REG`
-    - `TELEGRAM_BOT_TOKEN`
-    - `TELEGRAM_CHAT_ID`
-
-2. The workflow is defined in `.github/workflows/schedule.yml`
-
-## Environment Variables
-
-The following environment variables are used by the script:
-
 - `EMAIL`: Your EuroPark email address.
 - `PASSWORD`: Your EuroPark password.
 - `VEHICLE_REG`: Your vehicle registration number.
 - `TELEGRAM_BOT_TOKEN`: Your Telegram bot token.
 - `TELEGRAM_CHAT_ID`: Your Telegram chat ID.
 
-Make sure to set these variables in your environment or pass them directly when running the Docker container.
-
-## License
-
-This project is licensed under the MIT License.
+2. The workflow is defined in `.github/workflows/schedule.yml`
