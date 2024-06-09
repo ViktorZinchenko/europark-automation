@@ -62,11 +62,11 @@ To run the Docker container with your environment variables, use the following c
 
 ```bash
 docker run \
-  -e EMAIL=viktor.z@parim.co.uk \
-  -e PASSWORD=sol27gb \
-  -e VEHICLE_REG=058MXS \
-  -e TELEGRAM_BOT_TOKEN=7367950734:AAFX3W-xjDC_TISAfilNj2HI2tcxo8U1jt0 \
-  -e TELEGRAM_CHAT_ID=542465851 \
+  -e EMAIL=email \
+  -e PASSWORD=password \
+  -e VEHICLE_REG=number \
+  -e TELEGRAM_BOT_TOKEN=token \
+  -e TELEGRAM_CHAT_ID=id \
   europark-automation
 ```
 
