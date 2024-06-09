@@ -61,7 +61,13 @@ docker build -t europark-automation .
 To run the Docker container with your environment variables, use the following command:
 
 ```bash
-docker run -e EMAIL=email -e PASSWORD=password -e VEHICLE_REG=number -e TELEGRAM_BOT_TOKEN=token -e TELEGRAM_CHAT_ID=id europark-automation
+docker run \
+  -e EMAIL=viktor.z@parim.co.uk \
+  -e PASSWORD=sol27gb \
+  -e VEHICLE_REG=058MXS \
+  -e TELEGRAM_BOT_TOKEN=7367950734:AAFX3W-xjDC_TISAfilNj2HI2tcxo8U1jt0 \
+  -e TELEGRAM_CHAT_ID=542465851 \
+  europark-automation
 ```
 
 ## GitHub Actions
@@ -106,7 +112,14 @@ This project includes a GitHub Actions workflow to run the automation script dai
             VEHICLE_REG: ${{ secrets.VEHICLE_REG }}
             TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
             TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          run: docker run -e EMAIL=${{ secrets.EMAIL }} -e PASSWORD=${{ secrets.PASSWORD }} -e VEHICLE_REG=${{ secrets.VEHICLE_REG }} -e TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }} -e TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }} europark-automation
+          run: |
+            docker run \
+              -e EMAIL=$EMAIL \
+              -e PASSWORD=$PASSWORD \
+              -e VEHICLE_REG=$VEHICLE_REG \
+              -e TELEGRAM_BOT_TOKEN=$TELEGRAM_BOT_TOKEN \
+              -e TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID \
+              europark-automation
     ```
 
 ## Environment Variables
